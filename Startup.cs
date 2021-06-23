@@ -25,6 +25,7 @@ namespace LocalizationApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddControllersWithViews();
         }
 
@@ -47,7 +48,7 @@ namespace LocalizationApp
 
             app.UseRequestLocalization(new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture("ru-RU"),
+                DefaultRequestCulture = new RequestCulture("ru"),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             });
