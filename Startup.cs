@@ -26,7 +26,8 @@ namespace LocalizationApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLocalization(options => options.ResourcesPath = "Resources");
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                    .AddViewLocalization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

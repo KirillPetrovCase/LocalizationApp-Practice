@@ -1,6 +1,9 @@
-﻿@{
-    ViewData["Title"] = ViewData["Header"];
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = @localizer["Header"];
 }
 
-<h1>@ViewData["Header"]</h1>
-<h3>@ViewData["Message"]</h3>
+<h1>@localizer["Header"]</h1>
+<h3>@localizer["Message"]</h3>
